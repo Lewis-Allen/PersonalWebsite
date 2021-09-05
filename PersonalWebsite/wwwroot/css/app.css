@@ -8,8 +8,8 @@ html, body {
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: lightcyan;
     overflow-x: hidden;
+    background-color: transparent;
 }
 
 #blazor-error-ui {
