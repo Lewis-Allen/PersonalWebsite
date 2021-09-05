@@ -1,0 +1,81 @@
+﻿section {
+    width: 100vw;
+    height: 100vh;
+    max-width: 100%;
+}
+
+#opening-section {
+    background-color: transparent;
+    display: flex;
+    align-items: center;
+}
+
+#stuff-section {
+    background-color: #FEE5AD;
+}
+
+#wave {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: -100;
+}
+
+#moon {
+    position: absolute;
+    width: 200px;
+    z-index: -100;
+    top: 200px;
+    left: 100vw;
+    animation: 
+        x 20s linear 10s infinite, 
+        y 20s 10s infinite cubic-bezier(0,500,1,500), 
+        spinning 30s linear infinite;
+}
+
+#sun {
+    position: absolute;
+    width: 200px;
+    z-index: -100;
+    top: 200px;
+    left: 100vw;
+    animation: 
+        x 20s linear infinite, 
+        y 20s infinite cubic-bezier(0,500,1,500), 
+        spinning 30s linear infinite;
+}
+
+@keyframes x {
+    0% {
+        left: 100vw;
+    }
+    50% {
+        left: calc(0px - 200px);
+    }
+    100% {
+        left: calc(0px - 200px);
+    }
+}
+
+@keyframes y {
+    0% {
+        top: 200px;
+    }
+    50% {
+        top: 199.5px;
+    }
+    100% {
+        top: 199.5px;
+    }
+}
+
+@keyframes spinning {
+    from {
+        transform: rotate(0deg)
+    }
+
+    to {
+        transform: rotate(360deg)
+    }
+}
