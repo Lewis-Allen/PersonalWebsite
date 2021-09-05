@@ -1,0 +1,75 @@
+/* /Features/Home/HomePage.razor.rz.scp.css */
+section[b-3vpu4a811s] {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100%;
+}
+
+#opening-section[b-3vpu4a811s] {
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+}
+
+#stuff-section[b-3vpu4a811s] {
+  background-color: #FEE5AD;
+}
+
+#wave[b-3vpu4a811s] {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  left: 0;
+  z-index: -100;
+}
+
+#moon[b-3vpu4a811s] {
+  position: absolute;
+  width: 200px;
+  z-index: -100;
+  top: 200px;
+  left: 100vw;
+  animation: x-b-3vpu4a811s 20s linear 10s infinite, y-b-3vpu4a811s 20s 10s infinite cubic-bezier(0, 500, 1, 500), spinning-b-3vpu4a811s 30s linear infinite;
+}
+
+#sun[b-3vpu4a811s] {
+  position: absolute;
+  width: 200px;
+  z-index: -100;
+  top: 200px;
+  left: 100vw;
+  animation: x-b-3vpu4a811s 20s linear infinite, y-b-3vpu4a811s 20s infinite cubic-bezier(0, 500, 1, 500), spinning-b-3vpu4a811s 30s linear infinite;
+}
+
+@keyframes x-b-3vpu4a811s {
+  0% {
+    left: 100vw;
+  }
+  50% {
+    left: calc(0px - 200px);
+  }
+  100% {
+    left: calc(0px - 200px);
+  }
+}
+@keyframes y-b-3vpu4a811s {
+  0% {
+    top: 200px;
+  }
+  50% {
+    top: 199.5px;
+  }
+  100% {
+    top: 199.5px;
+  }
+}
+@keyframes spinning-b-3vpu4a811s {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/*# sourceMappingURL=HomePage.razor.css.map */
