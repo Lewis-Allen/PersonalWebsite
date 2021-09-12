@@ -12,16 +12,13 @@ section {
     align-items: center;
 }
 
-#stuff-section {
-    background-color: #FEE5AD;
-}
-
 #wave {
     position: absolute;
     width: 100%;
     bottom: 0;
     left: 0;
     z-index: -100;
+    animation: wave-colour (1s * $cycle-time * 2) linear infinite;
 }
 
 #moon {
@@ -67,7 +64,7 @@ section {
     left: 0;
     z-index: -120;
     opacity: 0;
-    background: radial-gradient(ellipse at bottom, #1B2735 0%, #090A0F 100%);
+    background: radial-gradient(ellipse at bottom, #1B2735 0%, #33363D 100%);
     animation: day-night-cycle (1s * $cycle-time * 2) linear (1s * $cycle-time) infinite;
 }
 
@@ -153,6 +150,31 @@ section {
     }
 }
 
+$grass-during-day: #4FBF26;
+$grass-during-night: #8D8D8D;
+
+@keyframes wave-colour {
+    0% {
+        fill: $grass-during-night;
+    }
+
+    1% {
+        fill: $grass-during-day;
+    }
+
+    50% {
+        fill: $grass-during-day;
+    }
+
+    51% {
+        fill: $grass-during-night;
+    }
+
+    100% {
+        fill: $grass-during-night;
+    }
+}
+
 /*
     Some of the below CSS for the stars is a custom modification of a codepen. Copyright attribution as required supplied below.
     Copyright (c) 2021 by Saransh Sinha (https://codepen.io/saransh/pen/BKJun) Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions: The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
@@ -179,7 +201,7 @@ $shadows-big: multiple-box-shadow(100);
     box-shadow: $shadows-small;
     animation: 
         day-night-cycle (1s * $cycle-time * 2) linear (1s * $cycle-time) infinite,
-        stars 150s linear infinite;
+        stars (1s * $cycle-time * 12) linear infinite;
 
     &:before {
         content: " ";
@@ -200,7 +222,7 @@ $shadows-big: multiple-box-shadow(100);
     box-shadow: $shadows-medium;
     animation: 
         day-night-cycle (1s * $cycle-time * 2) linear (1s * $cycle-time) infinite,
-        stars 100s linear infinite;
+        stars (1s * $cycle-time * 8) linear infinite;
 
     &:after {
         content: " ";
@@ -220,7 +242,7 @@ $shadows-big: multiple-box-shadow(100);
     box-shadow: $shadows-big;
     animation: 
         day-night-cycle (1s * $cycle-time * 2) linear (1s * $cycle-time) infinite,
-        stars 50s linear infinite;
+        stars (1s * $cycle-time * 4) linear infinite;
 
     &:after {
         content: " ";
@@ -248,7 +270,7 @@ $shadows-big: multiple-box-shadow(100);
     }
 }
 
-#starcontainer {
+#star-container {
     z-index: -110;
     position: absolute;
 }
